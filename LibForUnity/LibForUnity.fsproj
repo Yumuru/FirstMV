@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OtherFlags></OtherFlags>
+    <OutputPath>E:\Unity\Projects\1912\FirstMV\Assets\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="MeshEditor.fs" />
+    <Compile Include="Library.fs" />
+    <Compile Include="ObjExporter.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharpPlus" Version="1.1.0-CI00272" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\SystemDatas\UnityEditors\2018.4.13f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\SystemDatas\UnityEditors\2018.4.13f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
