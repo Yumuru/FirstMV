@@ -3,7 +3,8 @@ Shader "Items/LineWorld" {
     Properties {
         [IntRange] _Iteration ("Marching Iteration", Range(0, 256)) = 128
         _Size("Size", Range(0, 2)) = 1
-        _WSize("WSize", Range(0, 2)) = 2
+		_BoxColor("BoxColor", Color) = (0, 0, 1, 1)
+        _WSize("WSize", Range(0, 10)) = 2
         _Width("Width", Range(0, 2)) = 0.5
         _Value("Value", Range(0, 5)) = 0.0
     }
@@ -26,6 +27,7 @@ Shader "Items/LineWorld" {
 
             uint _Iteration;
             float _Size;
+			fixed4 _BoxColor;
             float _WSize;
             float _Width;
             float _Value;
@@ -55,12 +57,13 @@ Shader "Items/LineWorld" {
                 float box = sdBox(p, _Size);
                 float a = min(ax, min(ay, az));
                 fixed4 ca = fixed4(0, 1, 0, 1);
-                fixed4 cb = fixed4(0, 0, 1, 1);
+                fixed4 cb = _BoxColor;
                 col = lerp(ca, cb, step(box, a));
                 return min(a, box);
             }
 
             float distray(float3 p, out fixed4 col) {
+				p += 100 * _WSize + _WSize * 0.5;
                 float3 c = _WSize;
                 float3 q = fmod(p+0.5*c,c)-0.5*c;
                 return map(q, col);
@@ -72,7 +75,7 @@ Shader "Items/LineWorld" {
             }
 
             float3 getNormal(float3 p) {
-                float ep = 0.000001;
+                float ep = 0.0001;
                 float x = distray(p + float3(ep, 0, 0))
                         - distray(p - float3(ep, 0, 0));
                 float y = distray(p + float3(0, ep, 0))
@@ -99,7 +102,6 @@ Shader "Items/LineWorld" {
                 if (!isColl) discard;
                 float3 n = UnityObjectToWorldNormal(getNormal(pos));
                 fixed4 c1 = 1;
-                //c2 = fixed4(0, 1, 0, 1);
                 fixed4 col = lerp(c1, c2, (1-dot(n, -cDir)));
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;

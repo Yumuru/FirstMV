@@ -8,3 +8,8 @@ E:\Unity\Projects\1912\FirstMV\Assets\netcoreapp3.0\LibForUnity.dll
 E:\Unity\Projects\1912\FirstMV\Assets\netcoreapp3.0\LibForUnity.pdb
 E:\Unity\Projects\1912\LibForUnity\obj\Debug\netcoreapp3.0\LibForUnity.dll
 E:\Unity\Projects\1912\LibForUnity\obj\Debug\netcoreapp3.0\LibForUnity.pdb
+E:\Unity\Projects\1912\FirstMV\LibForUnity\obj\Debug\netcoreapp3.0\LibForUnity.fsprojAssemblyReference.cache
+E:\Unity\Projects\1912\FirstMV\LibForUnity\obj\Debug\netcoreapp3.0\LibForUnity.AssemblyInfoInputs.cache
+E:\Unity\Projects\1912\FirstMV\LibForUnity\obj\Debug\netcoreapp3.0\LibForUnity.AssemblyInfo.fs
+E:\Unity\Projects\1912\FirstMV\LibForUnity\obj\Debug\netcoreapp3.0\LibForUnity.dll
+E:\Unity\Projects\1912\FirstMV\LibForUnity\obj\Debug\netcoreapp3.0\LibForUnity.pdb

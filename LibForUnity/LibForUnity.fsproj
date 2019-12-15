@@ -10,9 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="IO.fs" />
     <Compile Include="MeshEditor.fs" />
-    <Compile Include="Library.fs" />
     <Compile Include="ObjExporter.fs" />
+    <Compile Include="Library.fs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,11 +22,11 @@
 
   <ItemGroup>
     <Reference Include="UnityEditor">
-      <HintPath>..\..\..\..\SystemDatas\UnityEditors\2018.4.13f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+      <HintPath>..\..\..\..\..\SystemDatas\UnityEditors\2018.4.13f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\SystemDatas\UnityEditors\2018.4.13f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\SystemDatas\UnityEditors\2018.4.13f1\Editor\Data\Managed\UnityEngine.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>

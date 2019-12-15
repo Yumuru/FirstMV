@@ -1646,7 +1646,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: material._Value
-    path: Cube
+    path: SphereDance/test.obj
     classID: 23
     script: {fileID: 0}
   m_EulerEditorCurves: []
