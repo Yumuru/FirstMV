@@ -1,8 +1,9 @@
-﻿Shader "Items/Stage/Back"
+﻿
+Shader "Items/Stage/Back"
 {
     Properties
     {
-		_Val("Val", Range(0, 1)) = 1
+		_Color("Color", Color) = (0,0,0,1)
     }
     SubShader
     {
@@ -21,7 +22,7 @@
 
             #include "UnityCG.cginc"
 
-			float _Val;
+			fixed4 _Color;
 
             struct appdata
             {
@@ -42,10 +43,7 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                return _Val;
+                return _Color;
             }
             ENDCG
         }

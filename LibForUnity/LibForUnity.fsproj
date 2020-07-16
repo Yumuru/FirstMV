@@ -11,9 +11,12 @@
 
   <ItemGroup>
     <Compile Include="IO.fs" />
+    <Compile Include="UnityIO.fs" />
     <Compile Include="MeshEditor.fs" />
     <Compile Include="ObjExporter.fs" />
-    <Compile Include="Library.fs" />
+    <Compile Include="CreateMesh.fs" />
+    <Compile Include="Editor.fs" />
+    <Compile Include="TestObj.fs" />
   </ItemGroup>
 
   <ItemGroup>

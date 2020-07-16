@@ -4,7 +4,8 @@
 type IO<'t> = IO of (unit -> 't)
 
 let iorun (IO x) = x ()
-let iocons v = IO (fun () -> v)
+let ioret v = IO (fun () -> v)
+let iou = ioret ()
 
 type IO<'t> with
     static member Return x = IO (fun () -> x)

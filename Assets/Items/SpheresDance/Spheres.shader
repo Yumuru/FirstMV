@@ -77,7 +77,7 @@
                 return normalize(float3(x, y, z));
             }
 
-            fixed4 frag (fin i) : SV_Target {
+            fixed4 frag (fin i, out float depth : SV_Depth) : SV_Target {
                 float3 cPos = mul(unity_WorldToObject,
                                 float4(_WorldSpaceCameraPos, 1));
                 float3 cDir = normalize(i.pos - cPos);
@@ -96,6 +96,7 @@
                 fixed4 c2 = fixed4(0, 1, 1, 0);
                 fixed4 col = lerp(c1, c2, (1-dot(n, -cDir)));
                 UNITY_APPLY_FOG(i.fogCoord, col);
+				depth = GetCameraDepth(pos);
                 return col;
             }
             ENDCG

@@ -22,6 +22,10 @@ float3 rotate(float3 p, float angle, float3 axis) {
     return mul(m, p);
 }
 
+float3 makeVertical(float3 v) {
+	return normalize(cross(v, rotate(rotate(v, PI * 0.1, float3(0,1,0)), PI*0.1, float3(0,0,1))));
+}
+
 float3 project(float3 p, float3 d) {
     d = normalize(d);
     return dot(p, d) * d;
